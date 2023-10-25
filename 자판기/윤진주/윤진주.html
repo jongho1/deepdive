@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>윤진주</title>
+  </head>
+
+  <style>
+    #container {
+      width: 100vw;
+      display: flex;
+      justify-content: flex-start;
+    }
+    table {
+      width: 600px;
+    }
+    table td {
+      border: 1px solid black;
+      text-align: center;
+      height: 60px;
+    }
+    .drink {
+      height: 100px;
+      width: 33%;
+    }
+    .drink > div {
+      margin: 10px 0;
+    }
+    .item,
+    .btn {
+      outline: none;
+      border: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      cursor: pointer;
+    }
+    .buyable {
+      background-color: aqua;
+      color: white;
+      font-weight: bold;
+    }
+    #currentItem {
+      margin: 5px 0;
+    }
+    #currentItem > button {
+      margin-right: 5px;
+      padding: 2px 5px;
+    }
+    #changeItemContainer {
+      margin-top: 20px;
+    }
+    #changeItemContainer > div {
+      margin: 15px 0;
+    }
+    #changeItemContainer button {
+      outline: none;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 3px;
+    }
+  </style>
+
+  <body>
+    <div id="container">
+      <div>
+        <table id="자판기">
+          <thead>
+            <tr>
+              <td colspan="3">자판기</td>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <button type="button" class="btn" id="insertMoney">
+                  돈 넣기
+                </button>
+              </td>
+              <td>잔액 : <span id="money">0</span> 원</td>
+              <td>
+                <button type="button" class="btn" id="getChangButton">
+                  거스름돈받기
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="3" id="pick"></td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <div id="changeItemContainer">
+          <div>
+            <button type="button" id="insertDrink">음료 넣기</button>
+          </div>
+          현재상품
+          <div id="currentItem"></div>
+          <div>
+            <button id="addItemButton">상품추가하기</button>
+          </div>
+        </div>
+      </div>
+
+      <ul>
+        <li>자판기에 돈 넣으면 살 수 있는 상품 표시</li>
+        <li>살 수 없는 상품을 누르면 돈 부족하다고 prompt</li>
+        <li>상품 뽑을 때마다 갯수 조정</li>
+        <li>하단에 뽑은 상품 표시</li>
+        <li>품절 된 상품은 다시 채워넣을 수 있게</li>
+        <li>상품 추가(잔액이 0원일때만 가능)</li>
+        <li>상품 제거(잔액이 0원일때만 가능)</li>
+      </ul>
+    </div>
+  </body>
+
+  <script src="./윤진주.js"></script>
+</html>
